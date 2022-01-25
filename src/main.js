@@ -8,6 +8,12 @@ import Input from './components/input/index.vue'
 import InputBasic from './components/input/basic.vue'
 import AutoComplete from './components/input/auto-complete.vue'
 
+import Cascader from './components/cascader/index.vue'
+import CascaderBasic from './components/cascader/basic.vue'
+import CascaderLazyload from './components/cascader/lazyload.vue'
+
+import './mock/index'
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
@@ -20,6 +26,14 @@ const routes = [
     children: [
       { path: '/input/basic', component: InputBasic },
       { path: '/input/auto-complete', component: AutoComplete },
+    ],
+  },
+  {
+    path: '/cascader',
+    component: Cascader,
+    children: [
+      { path: '/cascader/basic', component: CascaderBasic },
+      { path: '/cascader/lazyload', component: CascaderLazyload },
     ],
   },
 ]
